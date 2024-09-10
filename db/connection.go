@@ -11,22 +11,24 @@ import (
 var DB *gorm.DB
 
 func OpenConnection() (*gorm.DB, error) {
-
+	// Read environment variables
 	host := os.Getenv("DB_HOST")
 	port := os.Getenv("DB_PORT")
 	user := os.Getenv("DB_USER")
 	pass := os.Getenv("DB_PASS")
-	database := os.Getenv("DB_DATABASE")
+	database := os.Getenv("DB_NAME")
 	sslmode := os.Getenv("DB_SSLMODE")
 
 	if sslmode == "" {
 		sslmode = "prefer"
 	}
 
-	dns := fmt.Sprintf("host=%s port=%s dbname=%s user=%s password=%s sslmode=%s connect_timeout=10", host, port, database, user, pass, sslmode)
-	db, err := gorm.Open(postgres.Open(dns), &gorm.Config{})
+	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=%s",
+		host, port, user, pass, database, sslmode)
+
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to connect to database: %w", err)
 	}
 
 	return db, nil
@@ -36,12 +38,12 @@ func InitGorm() {
 	var err error
 	DB, err = OpenConnection()
 	if err != nil {
-		log.Fatalf("Erro ao conectar ao banco de dados: %v", err)
+		log.Fatalf("Error connecting to the database: %v", err)
 	}
 
 	if DB == nil {
-		log.Fatalf("A instância do banco de dados é nil após a inicialização")
+		log.Fatalf("Database instance is nil after initialization")
 	}
 
-	log.Println("Conexão com o banco de dados estabelecida com sucesso")
+	log.Println("Database connection established successfully")
 }

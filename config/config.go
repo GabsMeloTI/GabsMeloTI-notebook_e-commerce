@@ -1,10 +1,8 @@
 package config
 
 import (
-	"log"
-	"os"
-
 	"github.com/spf13/viper"
+	"log"
 )
 
 var cfg *Config
@@ -61,29 +59,7 @@ func Load() error {
 		},
 	}
 
-	if err := validateConfig(cfg); err != nil {
-		return err
-	}
-
 	return nil
-}
-
-func validateConfig(cfg *Config) error {
-	if cfg.DB.Host == "" || cfg.DB.Port == "" || cfg.DB.User == "" || cfg.DB.Pass == "" || cfg.DB.Database == "" {
-		return logError("Database configuration is incomplete")
-	}
-
-	if cfg.API.Port == "" {
-		return logError("API port configuration is missing")
-	}
-
-	return nil
-}
-
-func logError(msg string) error {
-	err := log.New(os.Stderr, "CONFIG ERROR: ", log.LstdFlags)
-	err.Println(msg)
-	return msg
 }
 
 func GetDB() DBConfig {
