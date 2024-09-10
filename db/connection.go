@@ -1,15 +1,29 @@
 package db
 
 import (
+	"fmt"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"log"
+	"os"
 )
 
 var DB *gorm.DB
 
 func OpenConnection() (*gorm.DB, error) {
-	dns := "host=go_db port=5432 dbname='PostgreSQL 16' user=postgres password=12345678 connect_timeout=10 sslmode=prefer"
+
+	host := os.Getenv("DB_HOST")
+	port := os.Getenv("DB_PORT")
+	user := os.Getenv("DB_USER")
+	pass := os.Getenv("DB_PASS")
+	database := os.Getenv("DB_DATABASE")
+	sslmode := os.Getenv("DB_SSLMODE")
+
+	if sslmode == "" {
+		sslmode = "prefer"
+	}
+
+	dns := fmt.Sprintf("host=%s port=%s dbname=%s user=%s password=%s sslmode=%s connect_timeout=10", host, port, database, user, pass, sslmode)
 	db, err := gorm.Open(postgres.Open(dns), &gorm.Config{})
 	if err != nil {
 		return nil, err
