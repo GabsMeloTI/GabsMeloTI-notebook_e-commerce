@@ -4,13 +4,41 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f94d17fc-f558-4233-82f0-4bf8be8a42ea" name="Changes" comment="fix: update database configuration and connection settings">
+    <list default="true" id="f94d17fc-f558-4233-82f0-4bf8be8a42ea" name="Changes" comment="feat(models): add initial set of docker for e-commerce">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/brands/basic_list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/brands/create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/brands/list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/brands/update.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/list_cart_items.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/list_category.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/list_order.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/list_payment.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/list_products.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/list_stock_history.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/list_user.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/order_item/basic_list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/order_item/create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/order_item/list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/order_item/update.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/product_image/basic_list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/product_image/create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/product_image/list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/product_image/update.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/reviews/basic_list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/reviews/create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/reviews/list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/reviews/update.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/shipping_addresses/basic_list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/shipping_addresses/create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/shipping_addresses/list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/shipping_addresses/update.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/shopping_cart/basic_list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/shopping_cart/create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/shopping_cart/list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/shopping_cart/update.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/connection.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/connection.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +96,7 @@
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
-    "last_opened_file_path": "C:/Users/bielm/Documents/go",
+    "last_opened_file_path": "C:/Users/bielm/Documents/project-go/sales/dto/brands",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -76,6 +104,18 @@
     "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bielm\Documents\project-go\sales\dto\brands" />
+      <recent name="C:\Users\bielm\Documents\project-go\sales\dto\cart_items" />
+      <recent name="C:\Users\bielm\Documents\project-go\sales\dto\category" />
+      <recent name="C:\Users\bielm\Documents\project-go\sales\dto\order" />
+      <recent name="C:\Users\bielm\Documents\project-go\sales\dto\order_item" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bielm\Documents\project-go\sales\dto" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="go build sales" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="sales" />
@@ -119,7 +159,8 @@
     <MESSAGE value="Adding a database connection" />
     <MESSAGE value="feat(models): add core e-commerce models with relationships" />
     <MESSAGE value="fix: update database configuration and connection settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: update database configuration and connection settings" />
+    <MESSAGE value="feat(models): add initial set of docker for e-commerce" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(models): add initial set of docker for e-commerce" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
